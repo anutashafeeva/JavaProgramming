@@ -1,4 +1,4 @@
-package com.epam.anna_shafeeva.java.lesson5.task1;
+package com.epam.anna_shafeeva.java.lesson5;
 
 import com.epam.anna_shafeeva.java.lesson5.task1.salad.Salad;
 import com.epam.anna_shafeeva.java.lesson5.task1.vegetables.*;
