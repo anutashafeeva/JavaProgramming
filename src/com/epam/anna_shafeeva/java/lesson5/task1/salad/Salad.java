@@ -31,11 +31,11 @@ public class Salad implements InterfaceSalad {
 
     @Override
     public void sortVegetablesByCalories(List<Vegetable> vegetables) {
-        vegetables.sort((firstVegetable, secondVegetable) -> ((Double) firstVegetable.countCalories()).compareTo(((Double) secondVegetable.countCalories())));
+        vegetables.sort(Comparator.comparing(firstVegetable -> ((Double) firstVegetable.countCalories())));
     }
 
     @Override
     public void sortVegetablesByWeight(List<Vegetable> vegetables) {
-        vegetables.sort((firstVegetable, secondVegetable) -> ((Integer) firstVegetable.weight).compareTo(((Integer) secondVegetable.weight)));
+        vegetables.sort(Comparator.comparing(firstVegetable -> ((Integer) firstVegetable.weight)));
     }
 }
