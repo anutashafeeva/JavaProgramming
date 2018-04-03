@@ -24,12 +24,12 @@ public class Main {
 
         Salad salad = new Salad();
 
-        /*salad.addVegetables(vegetables, potato);
+        salad.addVegetables(vegetables, potato);
         salad.addVegetables(vegetables, beet);
         salad.addVegetables(vegetables, carrot);
         salad.addVegetables(vegetables, cabbage);
         salad.addVegetables(vegetables, cucumber);
-        salad.addVegetables(vegetables, onion);*/
+        salad.addVegetables(vegetables, onion);
         salad.addVegetables(vegetables, greenPea);
 
         salad.makeSalad(vegetables);
