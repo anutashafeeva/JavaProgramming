@@ -47,7 +47,7 @@ public class Main {
         int startWeight = 100;
         int finishWeight = 290;
         salad.sortVegetablesByWeight(vegetables);
-        System.out.println("Vegetable which weight beetwin " + startWeight + " and " + finishWeight + ":");
+        System.out.println("Vegetable which weight between " + startWeight + " and " + finishWeight + ":");
         for (Vegetable vegetable : vegetables) {
             if (vegetable.weight >= startWeight && vegetable.weight <= finishWeight)
                 System.out.println(vegetable.toString() + " " + vegetable.weight);
