@@ -1,7 +1,7 @@
 package com.epam.anna_shafeeva.java.lesson5;
 
-import com.epam.anna_shafeeva.java.lesson5.task1.salad.Salad;
-import com.epam.anna_shafeeva.java.lesson5.task1.vegetables.*;
+import com.epam.anna_shafeeva.java.lesson5.task1.classes.Salad;
+import com.epam.anna_shafeeva.java.lesson5.task1.classes.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,10 +38,10 @@ public class Main {
         salad.makeSalad(vegetables);
         System.out.println();
 
-        System.out.println("Caloricity of salad: " + salad.getCaloricity(vegetables) + " kcal" + "\n");
+        System.out.println("Caloricity of interfaces: " + salad.getCaloricity(vegetables) + " kcal" + "\n");
 
         salad.sortVegetablesByCalories(vegetables);
-        System.out.println("Sorted vegetables by calories:");
+        System.out.println("Sorted classes by calories:");
         for (Vegetable vegetable : vegetables) {
             System.out.println(vegetable.toString() + " " + vegetable.countCalories() / 1000 + " kcal");
         }
