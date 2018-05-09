@@ -5,7 +5,8 @@ import com.epam.anna_shafeeva.java.lesson4.task1.interfaces.InterfaceSalad;
 
 public class Salad implements InterfaceSalad {
 
-    public Salad(){}
+    public Salad() {
+    }
 
     public void canMakeSalad(Vegetable[] vegetables) throws VegetableIsNotExistExeption {
         for (int i = 0; i < vegetables.length; i++) {
@@ -15,17 +16,17 @@ public class Salad implements InterfaceSalad {
     }
 
     @Override
-    public double getCaloricity(Vegetable[] vegetables){
+    public double getCaloricity(Vegetable[] vegetables) {
         double calories = 0;
 
-            for (int i = 0; i < vegetables.length; i++) {
-                calories += vegetables[i].countCalories();
-            }
+        for (int i = 0; i < vegetables.length; i++) {
+            calories += vegetables[i].countCalories();
+        }
         return calories / 1000;
     }
 
     @Override
-    public void makeSalad(Vegetable[] vegetables) throws VegetableIsNotExistExeption {
+    public void makeSalad(Vegetable[] vegetables) {
         System.out.println("Ingredients:");
         for (int i = 0; i < vegetables.length; i++) {
             System.out.println(vegetables[i].state + " " + vegetables[i].toString() + " - " + vegetables[i].weight + " grams");
