@@ -1,31 +1,34 @@
 package com.epam.anna_shafeeva.java.lesson4.task1.classes;
 
+import com.epam.anna_shafeeva.java.lesson4.task1.exceptions.VegetableIsNotExistExeption;
 import com.epam.anna_shafeeva.java.lesson4.task1.interfaces.InterfaceSalad;
 
 public class Salad implements InterfaceSalad {
 
-    @Override
-    public double getCaloricity(Vegetable[] vegetables) {
-        double calories = 0;
+    public Salad(){}
+
+    public void canMakeSalad(Vegetable[] vegetables) throws VegetableIsNotExistExeption {
         for (int i = 0; i < vegetables.length; i++) {
-            try {
-                calories += vegetables[i].countCalories();
-            } catch (Exception e) {
-                break;
-            }
+            if (vegetables[i] == null)
+                throw new VegetableIsNotExistExeption("Not all vegetables in the salad");
         }
+    }
+
+    @Override
+    public double getCaloricity(Vegetable[] vegetables){
+        double calories = 0;
+
+            for (int i = 0; i < vegetables.length; i++) {
+                calories += vegetables[i].countCalories();
+            }
         return calories / 1000;
     }
 
     @Override
-    public void makeSalad(Vegetable[] vegetables) {
+    public void makeSalad(Vegetable[] vegetables) throws VegetableIsNotExistExeption {
         System.out.println("Ingredients:");
         for (int i = 0; i < vegetables.length; i++) {
-            try {
-                System.out.println(vegetables[i].state + " " + vegetables[i].toString() + " - " + vegetables[i].weight + " grams");
-            } catch (Exception e) {
-                return;
-            }
+            System.out.println(vegetables[i].state + " " + vegetables[i].toString() + " - " + vegetables[i].weight + " grams");
         }
     }
 
@@ -43,14 +46,10 @@ public class Salad implements InterfaceSalad {
     public void sortVegetablesByCalories(Vegetable[] vegetables) {
         for (int i = vegetables.length - 1; i > 0; i--) {
             for (int j = 0; j < i; j++) {
-                try {
-                    if (vegetables[j].countCalories() > vegetables[j + 1].countCalories()) {
-                        Vegetable vegetable = vegetables[j];
-                        vegetables[j] = vegetables[j + 1];
-                        vegetables[j + 1] = vegetable;
-                    }
-                } catch (Exception e) {
-                    return;
+                if (vegetables[j].countCalories() > vegetables[j + 1].countCalories()) {
+                    Vegetable vegetable = vegetables[j];
+                    vegetables[j] = vegetables[j + 1];
+                    vegetables[j + 1] = vegetable;
                 }
             }
         }
@@ -60,14 +59,10 @@ public class Salad implements InterfaceSalad {
     public void sortVegetablesByWeight(Vegetable[] vegetables) {
         for (int i = vegetables.length - 1; i > 0; i--) {
             for (int j = 0; j < i; j++) {
-                try {
-                    if (vegetables[j].weight > vegetables[j + 1].weight) {
-                        Vegetable vegetable = vegetables[j];
-                        vegetables[j] = vegetables[j + 1];
-                        vegetables[j + 1] = vegetable;
-                    }
-                } catch (Exception e) {
-                    return;
+                if (vegetables[j].weight > vegetables[j + 1].weight) {
+                    Vegetable vegetable = vegetables[j];
+                    vegetables[j] = vegetables[j + 1];
+                    vegetables[j + 1] = vegetable;
                 }
             }
         }

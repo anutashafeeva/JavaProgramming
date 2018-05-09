@@ -2,25 +2,27 @@ package com.epam.anna_shafeeva.java.lesson4;
 
 import com.epam.anna_shafeeva.java.lesson4.task1.classes.Salad;
 import com.epam.anna_shafeeva.java.lesson4.task1.classes.*;
+import com.epam.anna_shafeeva.java.lesson4.task1.exceptions.InvalidWeightOfVegetableException;
+import com.epam.anna_shafeeva.java.lesson4.task1.exceptions.VegetableIsNotExistExeption;
 
 public class Main {
 
-    private Vegetable[] vegetables = new Vegetable[7];
-
-    private Beet beet = new Beet(400, "boiled");
-    private Carrot carrot = new Carrot(300, "boiled");
-    private Potato potato = new Potato(400, "boiled");
-    private Cabbage cabbage = new Cabbage(200, "conserved");
-    private Cucumber cucumber = new Cucumber(200, "conserved");
-    private Onion onion = new Onion(150, "fresh");
-    private GreenPea greenPea = new GreenPea(500, "conserved");
-
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InvalidWeightOfVegetableException, VegetableIsNotExistExeption {
         Main app = new Main();
         app.start();
     }
 
-    private void start() {
+    private void start() throws InvalidWeightOfVegetableException, VegetableIsNotExistExeption {
+
+        Vegetable[] vegetables = new Vegetable[7];
+
+        Beet beet = new Beet(400, "boiled");
+        Carrot carrot = new Carrot(300, "boiled");
+        Potato potato = new Potato(400, "boiled");
+        Cabbage cabbage = new Cabbage(200, "conserved");
+        Cucumber cucumber = new Cucumber(200, "conserved");
+        Onion onion = new Onion(150, "fresh");
+        GreenPea greenPea = new GreenPea(500, "conserved");
 
         Salad salad = new Salad();
 
@@ -32,19 +34,16 @@ public class Main {
         salad.addVegetables(vegetables, onion);
         salad.addVegetables(vegetables, greenPea);
 
+        salad.canMakeSalad(vegetables);
         salad.makeSalad(vegetables);
         System.out.println();
 
-        System.out.println("Caloricity of interfaces: " + salad.getCaloricity(vegetables) + " kcal" + "\n");
+        System.out.println("Caloricity of salad: " + salad.getCaloricity(vegetables) + " kcal" + "\n");
 
         salad.sortVegetablesByCalories(vegetables);
-        System.out.println("Sorted classes by calories:");
+        System.out.println("Sorted vegetables by calories:");
         for (Vegetable vegetable : vegetables) {
-            try {
-                System.out.println(vegetable.toString() + " " + vegetable.countCalories() / 1000 + " kcal");
-            } catch (Exception e) {
-                break;
-            }
+            System.out.println(vegetable.toString() + " " + vegetable.countCalories() / 1000 + " kcal");
         }
         System.out.println();
 
@@ -53,12 +52,8 @@ public class Main {
         salad.sortVegetablesByWeight(vegetables);
         System.out.println("Vegetable which weight between " + startWeight + " and " + finishWeight + ":");
         for (Vegetable vegetable : vegetables) {
-            try {
-                if (vegetable.weight >= startWeight && vegetable.weight <= finishWeight)
-                    System.out.println(vegetable.toString() + " " + vegetable.weight);
-            } catch (Exception e) {
-                break;
-            }
+            if (vegetable.weight >= startWeight && vegetable.weight <= finishWeight)
+                System.out.println(vegetable.toString() + " " + vegetable.weight);
         }
     }
 }

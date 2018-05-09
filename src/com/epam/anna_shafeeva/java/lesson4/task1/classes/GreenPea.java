@@ -1,8 +1,10 @@
 package com.epam.anna_shafeeva.java.lesson4.task1.classes;
 
+import com.epam.anna_shafeeva.java.lesson4.task1.exceptions.InvalidWeightOfVegetableException;
+
 public class GreenPea extends Vegetable {
 
-    public GreenPea(int w, String st) {
+    public GreenPea(int w, String st) throws InvalidWeightOfVegetableException {
         super(w, st);
     }
 
