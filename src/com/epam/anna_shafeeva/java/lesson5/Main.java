@@ -38,10 +38,10 @@ public class Main {
         salad.makeSalad(vegetables);
         System.out.println();
 
-        System.out.println("Caloricity of interfaces: " + salad.getCaloricity(vegetables) + " kcal" + "\n");
+        System.out.println("Caloricity of salad: " + salad.getCaloricity(vegetables) + " kcal" + "\n");
 
         salad.sortVegetablesByCalories(vegetables);
-        System.out.println("Sorted classes by calories:");
+        System.out.println("Sorted vegetables by calories:");
         for (Vegetable vegetable : vegetables) {
             System.out.println(vegetable.toString() + " " + vegetable.countCalories() / 1000 + " kcal");
         }
