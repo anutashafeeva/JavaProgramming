@@ -7,24 +7,41 @@ import com.epam.anna_shafeeva.java.lesson4.task1.exceptions.VegetableIsNotExistE
 
 public class Main {
 
-    public static void main(String[] args) throws InvalidWeightOfVegetableException, VegetableIsNotExistExeption {
+    public static void main(String[] args) {
         Main app = new Main();
         app.start();
     }
 
-    private void start() throws InvalidWeightOfVegetableException, VegetableIsNotExistExeption {
+    private void start() {
 
         Vegetable[] vegetables = new Vegetable[7];
+        Beet beet = null;
+        Carrot carrot = null;
+        Potato potato = null;
+        Cabbage cabbage = null;
+        Cucumber cucumber = null;
+        Onion onion = null;
+        GreenPea greenPea = null;
 
-        Beet beet = new Beet(400, "boiled");
-        Carrot carrot = new Carrot(300, "boiled");
-        Potato potato = new Potato(400, "boiled");
-        Cabbage cabbage = new Cabbage(200, "conserved");
-        Cucumber cucumber = new Cucumber(200, "conserved");
-        Onion onion = new Onion(150, "fresh");
-        GreenPea greenPea = new GreenPea(500, "conserved");
+        boolean flagMayCanSalad = true;
+        while (flagMayCanSalad) {
+            try {
+                beet = new Beet((int) (Math.random() * 1000 - 100), "boiled");
+                carrot = new Carrot((int) (Math.random() * 1000 - 100), "boiled");
+                potato = new Potato((int) (Math.random() * 1000 - 100), "boiled");
+                cabbage = new Cabbage((int) (Math.random() * 1000 - 100), "conserved");
+                cucumber = new Cucumber((int) (Math.random() * 1000 - 100), "conserved");
+                onion = new Onion((int) (Math.random() * 1000 - 100), "fresh");
+                greenPea = new GreenPea((int) (Math.random() * 1000 - 100), "conserved");
+                flagMayCanSalad = false;
+            } catch (InvalidWeightOfVegetableException e) {
+                System.out.println(e.getMessage());
+            }
+        }
 
         Salad salad = new Salad();
+
+        int quantity = (int) (Math.random() * 2 + 6);
 
         salad.addVegetables(vegetables, potato);
         salad.addVegetables(vegetables, beet);
@@ -32,9 +49,15 @@ public class Main {
         salad.addVegetables(vegetables, cabbage);
         salad.addVegetables(vegetables, cucumber);
         salad.addVegetables(vegetables, onion);
-        salad.addVegetables(vegetables, greenPea);
+        if (quantity == 7)
+            salad.addVegetables(vegetables, greenPea);
 
-        salad.canMakeSalad(vegetables);
+        try {
+            salad.canMakeSalad(vegetables);
+        } catch (VegetableIsNotExistExeption e) {
+            System.out.println(e.getMessage());
+            return;
+        }
         salad.makeSalad(vegetables);
         System.out.println();
 
