@@ -1,7 +1,7 @@
 package com.epam.anna_shafeeva.java.lesson4;
 
-import com.epam.anna_shafeeva.java.lesson4.task1.classes.Salad;
-import com.epam.anna_shafeeva.java.lesson4.task1.classes.*;
+import com.epam.anna_shafeeva.java.lesson4.task1.salad.Salad;
+import com.epam.anna_shafeeva.java.lesson4.task1.vegetables.*;
 import com.epam.anna_shafeeva.java.lesson4.task1.exceptions.InvalidWeightOfVegetableException;
 import com.epam.anna_shafeeva.java.lesson4.task1.exceptions.VegetableIsNotExistExeption;
 

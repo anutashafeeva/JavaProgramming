@@ -1,7 +1,7 @@
 package com.epam.anna_shafeeva.java.lesson5;
 
-import com.epam.anna_shafeeva.java.lesson5.task1.classes.Salad;
-import com.epam.anna_shafeeva.java.lesson5.task1.classes.*;
+import com.epam.anna_shafeeva.java.lesson5.task1.vegetables.Salad;
+import com.epam.anna_shafeeva.java.lesson5.task1.vegetables.*;
 
 import java.util.ArrayList;
 import java.util.List;

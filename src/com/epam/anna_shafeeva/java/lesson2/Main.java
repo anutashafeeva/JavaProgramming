@@ -1,7 +1,7 @@
 package com.epam.anna_shafeeva.java.lesson2;
 
-import com.epam.anna_shafeeva.java.lesson2.task1.classes.Salad;
-import com.epam.anna_shafeeva.java.lesson2.task1.classes.*;
+import com.epam.anna_shafeeva.java.lesson2.task1.salad.Salad;
+import com.epam.anna_shafeeva.java.lesson2.task1.vegetables.*;
 
 public class Main {
 

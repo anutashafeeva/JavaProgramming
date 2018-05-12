@@ -1,6 +1,7 @@
 package com.epam.anna_shafeeva.java.lesson6;
 
-import com.epam.anna_shafeeva.java.lesson6.task1.classes.*;
+import com.epam.anna_shafeeva.java.lesson6.task1.salad.Salad;
+import com.epam.anna_shafeeva.java.lesson6.task1.vegetables.*;
 
 import java.io.*;
 

@@ -1,6 +1,7 @@
 package com.epam.anna_shafeeva.java.lesson8;
 
-import com.epam.anna_shafeeva.java.lesson8.task1.classes.*;
+import com.epam.anna_shafeeva.java.lesson8.task1.salad.Salad;
+import com.epam.anna_shafeeva.java.lesson8.task1.vegetables.*;
 import javafx.util.Pair;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
